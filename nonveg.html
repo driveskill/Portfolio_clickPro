@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Non-Veg Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: linear-gradient(to right, #f8cdda, #fbd3e9);
+      --text-color: #111;
+      --btn-text: #fff;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.4s ease;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    .typing-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      border-right: 2px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      display: inline-block;
+      animation: typing 3s steps(20) 1 normal both, blink 0.75s step-end infinite;
+    }
+
+    .title1 {
+      color: blueviolet;
+      animation-delay: 0s;
+    }
+
+    .title2 {
+      color: red;
+      animation-delay: 3.5s;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .toggle-dark {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 22px;
+      cursor: pointer;
+      background: #00000020;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    .menu-image {
+      display: block;
+      margin: 30px auto;
+      max-width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toggle-dark" onclick="toggleDarkMode()">🌙</div>
+
+  <header>
+    <div class="typing-text title1">Digital Menu</div><br>
+    <div class="typing-text title2">Non-Veg Menu</div>
+  </header>
+
+  <!-- Non-Veg image added -->
+  <img src="nonveg-menu.jpg" alt="Non-Veg Menu" class="menu-image">
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      const toggle = document.querySelector(".toggle-dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    }
+  </script>
+
+</body>
+</html>
